@@ -13,10 +13,13 @@
     <context:component-scan base-package="springQ1"/>
     <context:component-scan base-package="springQ2"/>
     <context:component-scan base-package="springQ3"/>
+    <context:component-scan base-package="springQ5"/>
     <aop:aspectj-autoproxy/>
 
     <bean class="springQ1.MyAspect"/>
     <bean class="springQ2.MyAspect"/>
     <bean class="springQ3.MyAspect"/>
+    <bean class="springQ5.MyAspect"/>
+
 
 </beans>
