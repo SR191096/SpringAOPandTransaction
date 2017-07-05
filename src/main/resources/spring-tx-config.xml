@@ -31,8 +31,12 @@
     <bean id="accountServices"  class="spring.txQ2.AccountServices">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
+    <bean id="accountTransactionService"  class="spring.txQ6.AccountTransactionService">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
     <bean id="transactionServices" class="spring.txQ4.TransactionServices">
         <property name="accountServices" ref="accountServices"/>
+        <property name="accountTransactionService" ref="accountTransactionService"/>
     </bean>
     <!--bean id="employeeService2" class="com.spring.demo.EmployeeService2">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Transactional
 public class AccountServices {
 
     private JdbcTemplate jdbcTemplate;
@@ -28,7 +29,7 @@ public class AccountServices {
         });
         statusCall(status);
     }
-    @Transactional(propagation = Propagation.SUPPORTS)
+    @Transactional(propagation = Propagation.REQUIRED,readOnly=true)
     public UserAccount getData(String name)
     {
 
@@ -50,7 +51,7 @@ public class AccountServices {
         statusCall(status);
     }
 
-    @Transactional(propagation = Propagation.SUPPORTS)
+    @Transactional(propagation = Propagation.REQUIRED)
     public void update(String name , double updatedBalance)
     {
         String sql = "UPDATE user_account SET balance = ? WHERE name = ?";
