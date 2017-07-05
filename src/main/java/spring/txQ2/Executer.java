@@ -1,4 +1,4 @@
-package spring.txQ1;
+package spring.txQ2;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

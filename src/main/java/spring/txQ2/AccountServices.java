@@ -1,4 +1,4 @@
-package spring.txQ1;
+package spring.txQ2;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

@@ -24,7 +24,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="accountServices" class="spring.txQ1.AccountServices">
+    <bean id="accountServices" class="spring.txQ2.AccountServices">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
 

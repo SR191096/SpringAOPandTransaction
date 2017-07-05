@@ -1,6 +1,4 @@
-package spring.txQ1;
-
-import org.springframework.stereotype.Repository;
+package spring.txQ2;
 
 
 public class UserAccount {
