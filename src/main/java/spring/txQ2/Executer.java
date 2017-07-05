@@ -12,7 +12,7 @@ public class Executer {
         accountServices.addEntry(userAccount1);
         accountServices.addEntry(userAccount2);
         accountServices.update("Leela",45000);
-       UserAccount userAccount =accountServices.getData("Leela");
+        UserAccount userAccount =accountServices.getData("Leela");
         System.out.println(userAccount);
         accountServices.delete("Ram");
     }
