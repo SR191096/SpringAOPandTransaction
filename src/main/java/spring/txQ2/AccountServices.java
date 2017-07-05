@@ -2,6 +2,8 @@ package spring.txQ2;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,7 +28,8 @@ public class AccountServices {
         });
         statusCall(status);
     }
-     UserAccount getData(String name)
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public UserAccount getData(String name)
     {
 
         String sql = "SELECT * FROM user_account WHERE name = ?";
@@ -40,13 +43,15 @@ public class AccountServices {
 
     }
 
-    void delete(String name)
+    public void delete(String name)
     {
         String sql = "DELETE FROM user_account WHERE name = ?";
       int status =  jdbcTemplate.update(sql,new Object[]{name});
         statusCall(status);
     }
-     void update(String name , double updatedBalance)
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public void update(String name , double updatedBalance)
     {
         String sql = "UPDATE user_account SET balance = ? WHERE name = ?";
         int status = jdbcTemplate.update(sql,new Object[]{updatedBalance,name});
