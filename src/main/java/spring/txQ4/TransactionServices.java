@@ -8,6 +8,7 @@ import spring.txQ2.UserAccount;
 import spring.txQ6.AccountTransactionService;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 @Transactional
 @Component
@@ -32,7 +33,7 @@ public class TransactionServices {
         this.accountServices = accountServices;
     }
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional(propagation = Propagation.REQUIRES_NEW,rollbackFor = SQLException.class)
         void transactAmount(String senderName , String recieverName,double amount)
         {
                 UserAccount sender = accountServices.getData(senderName);

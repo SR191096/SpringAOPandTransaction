@@ -38,6 +38,10 @@
         <property name="accountServices" ref="accountServices"/>
         <property name="accountTransactionService" ref="accountTransactionService"/>
     </bean>
+    <bean name="accountServicesProgramitically" class="spring.txQ3.AccountServicesProgramitically">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
     <!--bean id="employeeService2" class="com.spring.demo.EmployeeService2">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
 
